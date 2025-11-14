@@ -1,0 +1,104 @@
+:root {
+  --primary-color: #0074B7;  /* Bright royal blue */
+  --text-color: #E4E4E4;     /* Light neutral text */
+  --bg-dark: #0A1F2C;        /* Deep teal-blue base */
+  --card-bg: #161b22;        /* Soft glassy navy for sections/cards */
+  --accent: #00c896;         /* Vibrant blue accent for hover and highlights */
+}
+
+/* Section Base */
+.contact-section {
+  background: var(--bg-dark);
+  color: var(--text-color);
+  text-align: center;
+  padding: 80px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.contact-intro {
+  font-size: 1rem;
+  color: #b0bec5;
+  max-width: 650px;
+  margin: 0 auto 50px;
+  line-height: 1.7;
+}
+
+/* Card Layout */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.contact-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 30px 20px;
+  width: 260px;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 255, 200, 0.15);
+  border: 1px solid var(--accent);
+}
+
+/* Icon */
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+  transform: scale(1.1);
+}
+
+/* Headings and Buttons */
+.contact-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.contact-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--bg-dark);
+  background: var(--accent);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-card {
+    width: 90%;
+  }
+}

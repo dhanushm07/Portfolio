@@ -1,0 +1,126 @@
+:root {
+  --primary-color: #0074B7;  /* Bright royal blue */
+  --text-color: #E4E4E4;     /* Light neutral text */
+  --bg-dark: #0A1F2C;        /* Deep teal-blue base */
+  --card-bg: #161b22;        /* Soft glassy navy for sections/cards */
+  --accent: #00c896;         /* Vibrant blue accent for hover and highlights */
+}
+/* SECTION BASE */
+.skills-section {
+  background: var(--bg-dark);
+  padding: 80px 20px;
+  color: var(--text-color);
+  text-align: center;
+  overflow: hidden;
+}
+
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  background: var(--accent);
+  bottom: -10px;
+  left: 20%;
+  border-radius: 10px;
+}
+
+.section-subtitle {
+  color: #bbb;
+  margin-bottom: 3rem;
+  font-size: 1rem;
+}
+
+/* SKILLS GRID */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+/* CARD DESIGN */
+.skill-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(0, 191, 166, 0.1);
+}
+
+/* Subtle glowing overlay */
+.skill-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 191, 166, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Text styling */
+.skill-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent);
+  z-index: 2;
+  position: relative;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.skill-level {
+  font-size: 0.95rem;
+  color: #aaa;
+  z-index: 2;
+  position: relative;
+}
+
+/* Hover Animation */
+.skill-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 30px rgba(0, 191, 166, 0.25);
+}
+
+.skill-card:hover .skill-glow {
+  opacity: 1;
+  animation: pulse 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.4;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  .skill-card {
+    padding: 30px 15px;
+  }
+}
