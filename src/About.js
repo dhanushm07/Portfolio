@@ -32,11 +32,11 @@ const About = () => {
 
           <div className="about-stats">
             <div className="stat-card">
-              <h3>1+</h3>
+              <h3>1.5+</h3>
               <p>Years Experience</p>
             </div>
             <div className="stat-card">
-              <h3>4+</h3>
+              <h3>8+</h3>
               <p>Technologies Used</p>
             </div>
             <div className="stat-card">
